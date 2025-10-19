@@ -129,7 +129,7 @@ export default function App(){
     if(!user) return alert("Faça login");
     // show PIX instruction and confirm to register purchase
     const confirmMsg = `Enviar PIX de R$${prod.preco.toFixed(2)} para a chave ${pixKey} e depois clicar OK para marcar compra (modo de teste).`;
-    if(!confirm(confirmMsg)) return;
+    // if(window.confirm("Deseja continuar?")) {
     // create compra doc and (optionally) debit balance
     // For demo we do not auto-debit; if you want debit: update users doc
     await addDoc(collection(db,"compras"), {
